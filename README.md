@@ -1,13 +1,11 @@
 # collectd-ecs
 
-A prototype of how EMC ECS metrics such as disk usage, bandwith, transactions and replication traffic can be collected by `collectd` and then imported into
-the time series database `Grafana`.
+A prototype of how EMC ECS metrics such as disk usage, bandwith, transactions and replication traffic can be collected by `collectd` and then imported into the time series database `InfluxDB`, and then displayed using `Grafana`.
 
 ## Installation
 
-From an EMC ECS storage system, `collectd` will collect metrics and import them into `Grafana`.
+From an EMC ECS storage system, `collectd` will collect metrics and import them into `InfluxDB`.
 To configure `collectd` correctly, set the EMC ECS IP, Token, Storagepool and Replication Group values in the `collectd` configuration file like this:
-
 
 ```
 LoadPlugin network
