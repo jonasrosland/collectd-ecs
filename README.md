@@ -53,3 +53,34 @@ http POST http://admin:admin@192.168.99.100:3000/api/dashboards/db < grafana/das
 The end result will look something like this:
 
 ![Grafana dashboard showing EMC ECS metrics collected from collectd and stored in InfluxDB](docs/grafana-emc-ecs.png)
+
+## Metrics collected
+
+ - Nodes
+  - Total
+  - Good
+  - Bad
+  - Suspect
+ - Disks
+  - Total
+  - Good
+  - Bad
+  - Suspect
+ - Disk space
+  - Total
+  - Allocated
+  - Free
+ - Transactions
+  - Reads/sec
+  - Writes/sec
+  - Errors
+ - Bandwidth
+  - Disk read total
+  - Disk write total
+  - Disk read recovery
+  - Disk write recovery
+  - Disk read geo
+  - Disk write geo
+ - Replication
+  - Ingress traffic
+  - Egress traffic
