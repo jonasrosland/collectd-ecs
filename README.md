@@ -5,7 +5,7 @@ A prototype of how EMC ECS metrics such as disk usage, bandwith, transactions an
 ## Installation
 
 From an EMC ECS storage system, `collectd` will collect metrics and import them into `InfluxDB`.
-To configure `collectd` correctly, set the EMC ECS IP, Token, Storagepool and Replication Group values in the `collectd` configuration file like this:
+To configure `collectd` correctly we need to add the `network` and `Exec` plugins to our `collectd.conf`:
 
 ```
 LoadPlugin network
@@ -20,14 +20,13 @@ LoadPlugin Exec
 </Plugin>
 ```
 
-You also need to edit the EMC ECS configuration file (`emcecs-config.yml`) to something like this:
+You also need to edit the EMC ECS configuration file (`emcecs-config.yml`) to set the EMC ECS IP, Token, Storagepool and Replication Group values like this::
 
 ```
 ip: 104.197.166.218
 token: BAAcbGtVUDJDdVp5eUlkalNSNFE2NUg3eElodjJJPQMAjAQASHVybjpzdG9yYWdlb3M6VmlydHVhbERhdGFDZW50ZXJEYXRhOmM2NDFkOTg3LTQ5NWQtNGVlOS05NDVlLWYwMDI3ZDE0MGI2NwIADTE0NjU4NDUwNzgzMTkDAC51cm46VG9rZW46YzI4MTdjOGUtMjQ4Ny00Nzk4LTg3NWItMDIyOTRmZWMxMjBhAgAC0A8=
 storagepool: urn:storageos:VirtualArray:8f819354-d242-485c-becb-ad5cede8a741
 replgroup: Replication_Group:urn:storageos:ReplicationGroupInfo:600127c3-e0be-4ed9-a0df-0815fa0d02d7:global
-
 ```
 
 The default location for `emcecs-config.yml` is under `/usr/share/collectd/`. If you put it somewhere else you have to specify the configuration file location like this:
@@ -36,7 +35,6 @@ The default location for `emcecs-config.yml` is under `/usr/share/collectd/`. If
 <Plugin "exec">
 	Exec "operator" "python" "/usr/bin/collect-ecs.py" "-c" "/full/path/to/emcecs-config.yml"
 </Plugin>
-
 ```
 
 ## Usage
