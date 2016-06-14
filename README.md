@@ -61,6 +61,8 @@ The end result will look something like this:
   - Good
   - Bad
   - Suspect
+  - CPU utilization
+  - Memory utilization
  - Disks
   - Total
   - Good
@@ -71,8 +73,8 @@ The end result will look something like this:
   - Allocated
   - Free
  - Transactions
-  - Reads/sec
-  - Writes/sec
+  - Read latency
+  - Write latency
   - Errors
  - Bandwidth
   - Disk read total
@@ -81,6 +83,9 @@ The end result will look something like this:
   - Disk write recovery
   - Disk read geo
   - Disk write geo
+  - NIC total
+  - NIC read
+  - NIC write
  - Replication
   - Ingress traffic
   - Egress traffic
