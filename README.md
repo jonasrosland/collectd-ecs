@@ -1,6 +1,6 @@
 # collectd-ecs
 
-A prototype of how EMC ECS metrics such as disk usage, bandwith, transactions and replication traffic can be collected by `collectd` and then imported into the time series database `InfluxDB`, and then displayed using `Grafana`.
+A prototype of how EMC ECS metrics such as disk usage, bandwith, transactions and replication traffic can be collected by `collectd`, imported into the time series database `InfluxDB` and then displayed using `Grafana`.
 
 ## Installation
 
